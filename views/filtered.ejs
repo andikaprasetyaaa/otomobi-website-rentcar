@@ -1,0 +1,69 @@
+<section class="bg-dark py-5 mt-5">
+    <div class="text-center text-white">
+        <h1 class="display-4 fw-bolder">List of Cars</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <a href="/cars-list" class="btn btn-lg btn-outline-light px-5">
+            Back
+        </a>
+    </div>
+</section>
+<div class="row gx-5 m-5">
+    <% if (cars.length> 0) { %>
+        <% cars.forEach(car=> { %>
+            <div class="col-lg-4 mb-5">
+                <div class="card car-card h-100 shadow border-0">
+                    <img class="card-img-top" src="/uploads/<%=car.image%>" alt="..." />
+                    <div class="card-body p-4">
+                        <div>
+                            <h5 class="card-title">$<%= car.price %> <span class="text-muted h5">/day</span>
+                            </h5>
+                            <h4 class="card-title">
+                                <%= car.make %>
+                                    <%=car.model %>
+                            </h4>
+                        </div>
+                        <div class="row m-0 bg-light">
+                            <div class="col-md-4 col-6 ps-30 pe-0 my-4">
+                                <p class="text-muted">Mileage</p>
+                                <p class="h5">
+                                    <%= car.mile %><span class="ps-1">Km</span>
+                                </p>
+                            </div>
+                            <div class="col-md-4 col-6  ps-30 my-4">
+                                <p class="text-muted">Transmission</p>
+                                <p class="h5 m-0">
+                                    <%= car.transmission %>
+                                </p>
+                            </div>
+                            <div class="col-md-4 col-6 ps-30 my-4">
+                                <p class="text-muted">Fuel Type</p>
+                                <p class="h5 m-0">
+                                    <%= car.fuel %>
+                                </p>
+                            </div>
+                            <div class="col-md-4 col-6 ps-30 my-4">
+                                <p class="text-muted">Year</p>
+                                <p class="h5 m-0">
+                                    <%= car.year %>
+                                </p>
+                            </div>
+                            <div class="col-md-4 col-6 ps-30 my-4">
+                                <p class="text-muted">Color</p>
+                                <p class="h5 m-0">
+                                    <%= car.color %>
+                                </p>
+                            </div>
+                            <div class="col-md-4 col-6 ps-30 my-4">
+                                <p class="text-muted">Daily UI</p>
+                                <p class="h5 m-0">#002</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                        <a href="/edit-car/<%=car._id%>" class="btn btn-dark px-5">Edit Detail</a>
+                    </div>
+                </div>
+            </div>
+            <% }) %>
+                <% } %>
+</div>

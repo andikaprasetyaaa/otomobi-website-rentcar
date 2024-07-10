@@ -1,0 +1,121 @@
+<section class="search-page">
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">List of Cars</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <div class="form-group has-search my-5">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <form action="/search" method="post">
+                        <input type="text" name="search" class="form-control" placeholder="Search">
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <form action="/sort-make" method="post" class="input-group mb-3 col">
+                    <select name="sortMake" class="form-select"">
+                        <option selected>Car Make</option>
+                        <% let makeList=[] %>
+                            <% cars.forEach((car)=> {%>
+                                <% if (!makeList.includes(car.make)) { %>
+                                    <% makeList.push(car.make); %>
+                                        <option value='<%= car.make %>'>
+                                            <%= car.make %>
+                                        </option>
+                                        <% } %>
+                                            <% }) %>
+                    </select>
+                    <button type=" submit" class="btn btn-outline-light">Search</button>
+                </form>
+                <form action="/sort-transmission" method="post" class="input-group mb-3 col">
+                    <select name="sortTransmission" class="form-select"">
+                        <option selected>Transmission</option>
+                        <% let transmissionList=[] %>
+                            <% cars.forEach((car)=> {%>
+                                <% if (!transmissionList.includes(car.transmission)) { %>
+                                    <% transmissionList.push(car.transmission); %>
+                                        <option value='<%= car.transmission %>'>
+                                            <%= car.transmission %>
+                                        </option>
+                                        <% } %>
+                                            <% }) %>
+                    </select>
+                    <button type=" submit" class="btn btn-outline-light">Search</button>
+                </form>
+                <form action="/sort-price" method="post" class="input-group mb-3 col">
+                    <select name="sortPrice" class="form-select">
+                        <option selected>Price</option>
+                        <option value="asc">Highest</option>
+                        <option value="dsc">Lowest</option>
+                    </select>
+                    <button type="submit" class="btn btn-outline-light">Search</button>
+                </form>
+            </div>
+            <div class="mt-5">
+                <a href="/add-car" class="btn btn-light">Add New Car</a>
+            </div>
+        </div>
+    </header>
+    <div class="row gx-5 m-5">
+        <% if (cars.length> 0) { %>
+            <% cars.forEach(car=> { %>
+                <div class="col-lg-4 mb-5">
+                    <div class="card car-card h-100 shadow border-0">
+
+
+                        <img class="card-img-top" src="/uploads/<%=car.image%>" alt="..." />
+                        <div class="card-body p-4">
+                            <div>
+                                <h5 class="card-title">$<%= car.price %> <span class="text-muted h5">/day</span>
+                                </h5>
+                                <h4 class="card-title">
+                                    <%= car.make %>
+                                        <%=car.model %>
+                                </h4>
+                            </div>
+                            <div class="row m-0 bg-light">
+                                <div class="col-md-4 col-6 ps-30 pe-0 my-4">
+                                    <p class="text-muted">Mileage</p>
+                                    <p class="h5">
+                                        <%= car.mile %><span class="ps-1">Km</span>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 col-6  ps-30 my-4">
+                                    <p class="text-muted">Transmission</p>
+                                    <p class="h5 m-0">
+                                        <%= car.transmission %>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 col-6 ps-30 my-4">
+                                    <p class="text-muted">Fuel Type</p>
+                                    <p class="h5 m-0">
+                                        <%= car.fuel %>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 col-6 ps-30 my-4">
+                                    <p class="text-muted">Year</p>
+                                    <p class="h5 m-0">
+                                        <%= car.year %>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 col-6 ps-30 my-4">
+                                    <p class="text-muted">Color</p>
+                                    <p class="h5 m-0">
+                                        <%= car.color %>
+                                    </p>
+                                </div>
+                                <div class="col-md-4 col-6 ps-30 my-4">
+                                    <p class="text-muted">Daily UI</p>
+                                    <p class="h5 m-0">#002</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
+                            <a href="/edit-car/<%=car._id%>" class="btn btn-dark px-5">Edit Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+                    <% } %>
+    </div>
+</section>

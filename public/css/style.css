@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --white: #F8F6F4;
+    --blue: #C4DFDF;
+    --blue2: #D2E9E9;
+    --blue3: #E3F4F4;
+}
+
+
+html {
+    scroll-padding-top: 67px;
+
+}
+
+.navbar-custom {
+    padding: 1rem 0rem !important;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar-custom .navbar-brand {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+}
+
+.navbar-custom .navbar-nav .nav-item .nav-link {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+.offcanvas-body .list-group-item:hover {
+    background-color: var(--blue);
+}
+
+.offcanvas-body .list-group-item:focus {
+    background-color: var(--blue);
+}
+
+
+header.masthead {
+    position: relative;
+    overflow: hidden;
+    padding-top: calc(7rem + 72px);
+    padding-bottom: 7rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    height: 100vh;
+}
+
+header.masthead .masthead-content {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+}
+
+header.masthead .masthead-img {
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 65%;
+}
+
+header.masthead .masthead-content .masthead-heading {
+    font-size: 4rem !important;
+}
+
+header.masthead .masthead-content .masthead-subheading {
+    font-size: 3rem !important;
+}
+
+header .masthead-content .btn {
+    padding: 1rem 5rem;
+}
+
+header.masthead .bg-shape {
+    z-index: 0;
+    position: absolute;
+}
+
+header.masthead .bg-shape-1 {
+    height: 100%;
+    width: 60%;
+    top: 0;
+    left: 0;
+    background-color: var(--white);
+}
+
+header.masthead .bg-shape-2 {
+    height: 100%;
+    width: 40%;
+    top: 0;
+    right: 0;
+    background-color: var(--blue);
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        padding-top: calc(10rem + 55px);
+        padding-bottom: 10rem;
+    }
+
+    header.masthead .masthead-content .masthead-heading {
+        font-size: 6rem;
+    }
+
+    header.masthead .masthead-content .masthead-subheading {
+        font-size: 4rem;
+    }
+}
+
+
+/* Form */
+.form-wrapper {
+    height: 100vh;
+}
+
+.form-wrapper .form-img {
+    background: url('/img/login-bg.jpeg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.form-wrapper form {
+    padding: 3rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--white);
+}
+
+
+.quotes-section {
+    background-color: var(--blue2);
+}
+
+.car-card img {
+    background-color: var(--blue);
+    width: 100%;
+
+}
+
+
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+
+.car-cart {
+    min-height: 100vh;
+    padding: 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.about-us header.masthead {
+    background: url('../img/car-bg-2.jpeg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.about-us header.masthead .masthead-content .masthead-heading {
+    font-size: 5rem !important;
+    font-weight: bold !important;
+    color: white;
+}
+
+.about-us header.masthead .masthead-content .masthead-subheading {
+    font-size: 3rem !important;
+    color: white;
+}
+
+
+/* Landing Page */
+#landing-page {
+    background-color: --;
+}
+
+
+.bg-blue {
+    background-color: var(--blue3);
+}

@@ -1,0 +1,97 @@
+<section>
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Add New Car</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </header>
+    <section class="mt-5 p-5 row gx-5">
+        <div class="col-lg-12 mb-5 ">
+            <div class="card car-card mb-5">
+                <div class="row ">
+                    <div class="col-md-6">
+                        <img src="/img/NFSPB_PorschePanamera_Garage.png" class="card-img" alt="Cars Image">
+
+                    </div>
+                    <div style="z-index: 5;" class="col-md-6 d-flex flex-column justify-content-between py-5">
+                        <form action="/add-car" method="post" enctype="multipart/form-data" id="add-car-form"
+                            class="card-body">
+                            <div class="row m-0 bg-light">
+                                <div class="col-md-4 col-6  pe-0 my-4">
+                                    <label class="form-label">Car Make</label>
+                                    <input name="make" type="text" class="form-control">
+                                </div>
+                                <div class="col-md-4 col-6   my-4">
+                                    <label class="form-label">Car Model</label>
+                                    <input name="model" type="text" class="form-control">
+                                </div>
+                                <div class="col-md-4 col-6  my-4">
+                                    <label class="form-label">Price per Day</label>
+                                    <input name="price" type="number" class="form-control">
+                                </div>
+                                <div class="col-md-4 col-6  my-4">
+                                    <label class="form-label">Year</label>
+                                    <input name="year" type="number" class="form-control">
+                                </div>
+                                <div class="col-md-4 col-6 my-4">
+                                    <label class="form-label">Fuel Type</label>
+                                    <select name="fuel" class="form-control">
+                                        <option value="Gasoline">Gasoline</option>
+                                        <option value="Diesel">Diesel</option>
+                                        <option value="Hybrid">Hybrid</option>
+                                        <option value="Electric">Electric</option>
+                                    </select>
+                                </div>                                
+                                <div class="col-md-4 col-6 my-4">
+                                    <label class="form-label">Transmission</label>
+                                    <select name="transmission" class="form-control">
+                                        <option value="Manual">Manual</option>
+                                        <option value="Automatic">Automatic</option>
+                                    </select>
+                                </div>                                
+                                <div class=" col-md-4 col-6 my-4">
+                                    <label class="form-label">Mile Age</label>
+                                    <input name="mile" type="number" class="form-control">
+                                </div>
+                                <div class="col-md-4 col-6 my-4">
+                                    <label class="form-label">Color</label>
+                                    <select name="color" id="color-select" class="form-control">
+                                            <option value="red">Red</option>
+                                            <option value="white">White</option>
+                                            <option value="black">Black</option>
+                                            <option value="green">Green</option>
+                                            <option value="yellow">Yellow</option>
+                                            <option value="orange">Orange</option>
+                                            <option value="blue">Blue</option>
+                                            <option value="others">Others</option>
+                                            </select> </div>
+                                            <div class="col-md-4 col-6 my-4" id="other-color-container" style="display: none;">
+                                            <label class="form-label">Other Color</label>
+                                            <input name="other-color" id="other-color-input" type="text" class="form-control">
+                                            </div>
+                                            <script>
+                                             var colorSelect = document.getElementById('color-select');
+                                             var otherColorContainer = document.getElementById('other-color-container');
+                                            colorSelect.addEventListener('change', function() {
+                                                if (colorSelect.value === 'others') {
+                                                otherColorContainer.style.display = 'block';
+                                                } else {
+                                                otherColorContainer.style.display = 'none';
+                                                 }
+                                                });
+                                    </script>                                                                 
+                                    <div class="col-md-4 col-6  my-4">
+                                    <label class="form-label">Image</label>
+                                    <input name="image" type="file" class="form-control">
+                                </div>
+                            </div>
+                            <button type="submit" name="submit" class="btn btn-dark px-5 w-100">Add Car</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

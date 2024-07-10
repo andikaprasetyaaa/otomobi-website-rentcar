@@ -1,0 +1,69 @@
+<section>
+    <header class="bg-dark py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="text-center text-white">
+                <h1 class="display-4 fw-bolder">Add New Car</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </header>
+    <section class="mt-5 p-5 row gx-5">
+        <div class="col-lg-12 mb-5 ">
+            <div class="card car-card mb-5">
+                <div class="row ">
+                    <div class="col-md-6">
+                        <img src="/uploads/<%=car.image%>" class="card-img" alt="Cars Image">
+
+                    </div>
+                    <div style="z-index: 5;" class="col-md-6 d-flex flex-column justify-content-between py-5">
+                        <form action="/edit-car/<%= car._id %>" method="post" enctype="multipart/form-data"
+                            id="edit-car-form" class="card-body">
+                            <div class="row m-0 bg-light">
+                                <div class="col-md-4 col-6  pe-0 my-4">
+                                    <label class="form-label">Car Make</label>
+                                    <input name="make" type="text" class="form-control" value="<%= car.make%>">
+                                </div>
+                                <div class="col-md-4 col-6   my-4">
+                                    <label class="form-label">Car Model</label>
+                                    <input name="model" type="text" class="form-control" value="<%= car.model%>">
+                                </div>
+                                <div class=" col-md-4 col-6 my-4">
+                                    <label class="form-label">Price per Day</label>
+                                    <input name="price" type="number" class="form-control" value="<%= car.price%>">
+                                </div>
+                                <div class=" col-md-4 col-6 my-4">
+                                    <label class="form-label">Year</label>
+                                    <input name="year" type="number" class="form-control" value="<%= car.year%>">
+                                </div>
+                                <div class=" col-md-4 col-6 my-4">
+                                    <label class="form-label">Fuel Type</label>
+                                    <input name="fuel" type="text" class="form-control" value="<%= car.fuel%>">
+                                </div>
+                                <div class=" col-md-4 col-6 my-4">
+                                    <label class="form-label">Transmission</label>
+                                    <input name="transmission" type="text" class="form-control"
+                                        value="<%= car.transmission%>">
+                                </div>
+                                <div class=" col-md-4 col-6 my-4">
+                                    <label class="form-label">Mile Age</label>
+                                    <input name="mile" type="number" class="form-control" value="<%= car.mile%>">
+                                </div>
+                                <div class=" col-md-4 col-6 my-4">
+                                    <label class="form-label">Color</label>
+                                    <input name="color" type="text" class="form-control" value="<%= car.color%>">
+                                </div>
+                                <div class=" col-md-4 col-6 my-4">
+                                    <label class="form-label">Image</label>
+                                    <input name="image" type="file" class="form-control">
+                                </div>
+                                <input type="hidden" name="old_image" value="<%= car.image%>">
+                            </div>
+                            <button type=" submit" name="submit" class="btn btn-dark px-5">Save</button>
+                            <a href="/delete-car/<%= car._id %>" class="btn btn-danger px-5">Delete</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

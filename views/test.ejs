@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border: 1px solid black;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cars List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Car Image</th>
+                <th>Car Name</th>
+                <th>Mileage</th>
+                <th>Transmission</th>
+                <th>Drive Unit</th>
+                <th>Body</th>
+                <th>Color</th>
+                <th>Price per Day</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% cars.forEach(function(car) { %>
+            <tr>
+                <td><img style="height: 100px;" src="/uploads/<%=car.image%>" alt="..."/></td>
+                <td><%= car.name %></td>
+                <td><%= car.mile %> Km</td>
+                <td><%= car.transmission %></td>
+                <td><%= car.driveUnit %></td>
+                <td><%= car.body %></td>
+                <td><%= car.color %></td>
+                <td>$<%= car.price %> /day</td>
+                <td>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+
+</html>
